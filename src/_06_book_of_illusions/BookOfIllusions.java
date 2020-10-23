@@ -27,21 +27,33 @@ public class BookOfIllusions extends MouseAdapter {
 		frame.setSize(150,150);
 		// 4. find 2 images and save them to your project’s default package
 		// 5. make a variable to hold the location of your image. e.g. "illusion.jpg"
-		
+		String red = "red.png";
 		// 6. create a variable of type "JLabel" but don’t initialize it yet
 		JLabel label;
 		// 7. use the "loadImage..." methods below to initialize your JLabel
+		label = loadImageFromComputer(red);
 		// 8. add your JLabel to the frame
 		frame.add(label);
 		// 9. call the pack() method on the frame
 		// 10. add a mouse listener to your frame (hint: use *this*)
+		frame.addMouseListener(this);
 	}
 
 	public void mousePressed(MouseEvent e) {
 		// 11. Print "clicked!" to the console when the mouse is pressed
+		if (e.getSource()==frame) {
+			System.out.println("Clicked!");
+		}
 		// 12. remove everything from the frame that was added earlier
+		frame.removeAll();
+		frame.setVisible(true);
 		// 13. load a new image like before (this is more than one line of code)
+		JLabel label1;
+		String white = "white.jpg";
+		label1 = loadImageFromComputer(white);
+		frame.add(label1);
 		// 14. pack the frame
+		frame.setSize(120,120);
 	}
 
 	// [OPTIONAL] 15. goad your users with some annoying or witty pop-ups
