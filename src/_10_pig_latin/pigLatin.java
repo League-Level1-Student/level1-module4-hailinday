@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -14,6 +15,8 @@ public class pigLatin implements ActionListener {
 	JTextField field = new JTextField(15);
 	JTextField field2 = new JTextField(15);
 	JButton button = new JButton();
+	pigLatinTranslator translate = new pigLatinTranslator();
+	JLabel label;
 	public void run() {
 		frame.setVisible(true);
 		panel.add(field);
@@ -26,8 +29,9 @@ public class pigLatin implements ActionListener {
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
+			if(arg0.equals(button)) {
+				label.setText(translate.translate("hello"));
+			}
 	}
 		
 }
